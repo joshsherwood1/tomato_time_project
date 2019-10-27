@@ -15,13 +15,12 @@
 
 <section id='question-modal'>
   <% questions.each_with_index do |q, i| %>
-  <% binding.pry %>
-    <p>Question <%= i %>: <%= q.question %></p>
+    <p class='question'>Question <%= i + 1 %>: <%= q[:question] %></p>
 
-    <ol>
-    <% q.options.each do |option|  %>
-      <li><%= option %></li>
+    <ul>
+    <% q[:options].each_with_index do |option, i|  %>
+      <p class='option-<%= i + 1 %>'> <%= check_box_tag("option-#{i}", value = '1') %> <%= option %></p>
     <% end %>
-    </ol>
+    </ul>
   <% end %>
 </section>
