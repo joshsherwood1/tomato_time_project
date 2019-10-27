@@ -18,8 +18,14 @@ describe 'A registered user' do
 
     within '#question-modal' do
       expect(page).to have_content('Question')
-      expect(page).to have_content('Your Answer')
+      expect(first('.question').text).to_not be_empty
+      expect(page).to have_css('.option-1')
+      expect(page).to have_css('.option-2')
+      expect(page).to have_css('.option-3')
+      expect(page).to have_css('.option-4')
     end
+
+    save_and_open_page
 
   end
 end
