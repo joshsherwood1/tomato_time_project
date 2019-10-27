@@ -1,5 +1,6 @@
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=<%= ENV['RESPONSIVE_JS_KEY']%>"></script>
 <center id='play-button'>
-  <button type='button' class='btn btn-success' data-toggle='modal' data-target='#myModal-0'>Play Game</button>
+  <input value='Play Game' onclick="responsiveVoice.speak(document.getElementById('question-0').textContent);" type='button' class='btn btn-success' data-toggle='modal' data-target='#myModal-0' />
 </center>
 
 <% questions.each_with_index do |q, i| %>
@@ -13,7 +14,7 @@
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         </div>
 
-        <p class='question'><%= q[:question] %></p>
+        <p id='question-<%= i %>'><%= q[:question] %></p>
         <hr>
         <ul>
         <% q[:options].each_with_index do |option, i|  %>
@@ -21,8 +22,7 @@
         <% end %>
         </ul>
         <hr />
-
-        <button type="button" class="btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= i + 1 %>'>Next</button>
+        <input value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= i + 1 %>').textContent);" type='button' class="btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= i + 1 %>' />
       </div>
   </div>
 </div>
