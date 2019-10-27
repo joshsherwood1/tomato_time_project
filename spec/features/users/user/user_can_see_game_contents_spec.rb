@@ -16,7 +16,9 @@ describe 'A registered user' do
 
     expect(current_path).to eq("/games/#{game_1.id}")
 
-    within '#question-modal' do
+    expect(page).to have_button('Play Game')
+    
+    within '#myModal-0' do
       expect(page).to have_content('Question')
       expect(first('.question').text).to_not be_empty
       expect(page).to have_css('.option-1')
@@ -26,6 +28,5 @@ describe 'A registered user' do
     end
 
     save_and_open_page
-
   end
 end
