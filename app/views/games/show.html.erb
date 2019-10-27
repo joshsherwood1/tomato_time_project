@@ -18,15 +18,16 @@
         <hr>
         <ul>
         <% q[:options].each_with_index do |option, i|  %>
-          <p class='option-<%= i + 1 %>'> <%= check_box_tag("option-#{i}", value = '1') %> <%= option %></p>
+          <p class='option-<%= i + 1 %>'> <%= check_box_tag("option-#{i}", checked = true) %> <%= option %></p>
         <% end %>
         </ul>
         <hr />
-        <input value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= i + 1 %>').textContent);" type='button' class="btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= i + 1 %>' />
+        <input id='next-button' value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= i + 1 %>').textContent);" type='button' class="btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= i + 1 %>' />
       </div>
   </div>
 </div>
 <% end %>
+
 
 <!-- <section id='question-modal'> -->
   <!-- < % questions.each_with_index do |q, i| %> -->
