@@ -1,5 +1,6 @@
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=<%= ENV['RESPONSIVE_JS_KEY']%>"></script>
-<center id='play-button'>
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+<center>
   <input value='Play Game' onclick="responsiveVoice.speak(document.getElementById('question-0').textContent);" type='button' class='btn btn-success' data-toggle='modal' data-target='#myModal-0' />
 </center>
 
@@ -18,17 +19,19 @@
         <hr>
         <ul>
         <% q[:options].each_with_index do |option, i|  %>
-          <p class='option-<%= i + 1 %>'> <%= check_box_tag("option-#{i}", checked = true) %> <%= option %></p>
+          <p class='option-<%= i + 1 %>'>
+            <%= check_box_tag("option", value=option) %> <%= option %>
+          </p>
         <% end %>
         </ul>
         <hr />
-        <input id='next-button' value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= i + 1 %>').textContent);" type='button' class="btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= i + 1 %>' />
+
+        <input value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= i + 1 %>').textContent);" type='button' class="next-btn btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= i + 1 %>' />
+
       </div>
   </div>
 </div>
 <% end %>
-
-
 <!-- <section id='question-modal'> -->
   <!-- < % questions.each_with_index do |q, i| %> -->
     <!-- <p class='question'>Question < %= i + 1 %>: < %= q[:question] %></p> -->
