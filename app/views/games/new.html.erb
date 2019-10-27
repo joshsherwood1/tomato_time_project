@@ -1,0 +1,15 @@
+<h1 class='display-3' align='center'> Create a Game! </h1>
+
+<center>
+  <%= form_tag "/games", method: :post do %>
+    <%= label_tag "Customer name:" %>
+    <%= text_field_tag :custom_name, nil, placeholder: "Name" %> <br>
+    <%= label_tag "Total Number of Trivia Questions:" %>
+    <%= select_tag(:number_of_questions, options_for_select(questions), {class: "select-field"}) %><br>
+    <%= label_tag "Trivia Category:" %>
+    <%= select_tag(:category, options_for_select(categories), {class: "select-field"}) %><br>
+    <%= label_tag "Trivia Difficulty:" %>
+    <%= select_tag(:difficulty, options_for_select(difficulties), {class: "select-field"}) %><br>
+    <%= submit_tag('Create Game', class: "button") %>
+  <% end %>
+</center>

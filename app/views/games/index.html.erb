@@ -1,0 +1,38 @@
+<div class="container">
+  <center><h2><%= @user.username %>'s Games</h2></center>
+  <br>
+  <center><h3><%= button_to "Create New Game" %></h3></center>
+  <br>
+  <br>
+  <% unless @games.empty? %>
+    <section class="games">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Game</th>
+            <th scope="col">Category</th>
+            <th scope="col">Difficulty</th>
+            <th scope="col">Total Questions</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <% @games.each do |game| %>
+              <section id='game-<%= game.id %>'>
+                  <tr>
+                    <td><%= game.custom_name %></td>
+                    <td><%= game.category %></td>
+                    <td><%= game.difficulty %></td>
+                    <td><%= game.number_of_questions %></td>
+                    <td>
+                      <p><%= button_to "Start Game"%></p>
+                      <p><%= button_to "Delete", game_path(id: game.id), method: :delete%></p>
+                  </tr>
+              </section>
+            <% end %>
+        </tbody>
+      </table>
+    </section>
+  <% end %>
+</div>

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TomatoTime2</title>
+    <title>TomatoTime</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/671a6667b5.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +14,33 @@
   </head>
 
   <body>
+    <topnav id="top-navbar">
+  <nav class="navbar navbar-expand-lg">
+    <i class="fa fa-carrot fa-3x" style="color: #51cf66;"></i>
+     <a class="navbar-brand" href="/" style="font-size: 30px">TomatoTime</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+       <ul class="navbar-nav">
+         <% if current_user.nil? %>
+            <a class="nav-item nav-link active" href="/auth/google_oauth2">Login/Register with Google</a>
+          <% else %>
+            <a class="nav-item nav-link active" style="text-align: right" href="/games">My Games</a>
+            <a class="nav-item nav-link active" style="text-align: right" href="/profile">Profile</a>
+            <a class="nav-item nav-link active" style="text-align: right" href="/logout">Logout</a>
+         <% end %>
+       </ul>
+     </div>
+
+   </nav>
+  </topnav>
+    <% flash.each do |name, msg| %>
+      <div class= "<%=name%>-flash">
+        <p><%= msg %></p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
