@@ -11,12 +11,3 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
-
-// app/assets/javascript/cable.js
-
-(function() {
-  this.App || (this.App = {});
-
-  App.cable = ActionCable.createConsumer();
-
-}).call(this);

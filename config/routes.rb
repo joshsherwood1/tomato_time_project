@@ -13,9 +13,5 @@ Rails.application.routes.draw do
   get "/auth/failure", to: redirect("/")
   get "/profile", to: "users#show"
 
-  Rails.application.routes.draw do
-    root to: "games#show"
-    mount ActionCable.server => "/cable"
-  end
-
+  mount ActionCable.server => "/cable"
 end
