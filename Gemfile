@@ -38,6 +38,7 @@ gem "font-awesome-rails", "~> 4.3"
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'omniauth-google-oauth2'
 
+gem 'redis', '~> 3.0'
 gem 'figaro'
 gem 'faraday'
 

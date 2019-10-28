@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
   get "/register", to: "users#new"
-  resources :games, only: [:new, :create]
+  resources :games, only: [:new, :create, :index, :destroy, :show]
 
 
   # Routes for Google authentication
@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get "/auth/failure", to: redirect("/")
   get "/profile", to: "users#show"
 
-
-  resources :games, only:[:index, :destroy]
+  Rails.application.routes.draw do
+    root to: "games#show"
+    mount ActionCable.server => "/cable"
+  end
 
 end

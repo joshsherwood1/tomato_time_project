@@ -4,8 +4,12 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = current_user.games
+    @games = current_user.games || nil
     @user = current_user
+  end
+
+  def show
+    @game = Game.find(params[:id])
   end
 
   def create
@@ -26,7 +30,6 @@ class GamesController < ApplicationController
   end
 
   private
-
   def game_params
     params.permit(:custom_name, :number_of_questions, :category, :difficulty)
   end
