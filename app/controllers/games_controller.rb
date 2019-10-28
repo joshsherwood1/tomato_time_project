@@ -34,7 +34,7 @@ class GamesController < ApplicationController
 
     # consume TomatoTime API
     @questions = TomatoTimeApiService.get_data(category: game.category, difficulty: game.difficulty, amount: game.number_of_questions)
-
+    binding.pry #when we click start game it hits this segment
     # render game show page
     render locals: {
       questions: @questions,
