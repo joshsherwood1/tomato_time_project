@@ -10,5 +10,6 @@ describe Game, :type => :model do
 
   describe "relationships" do
       it { should belong_to(:user) }
+      it { should have_many :game_score }
   end
 end
