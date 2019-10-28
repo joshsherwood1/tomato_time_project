@@ -2,7 +2,6 @@ class Game < ApplicationRecord
   validates_presence_of :category, :difficulty, :number_of_questions, :custom_name
   belongs_to :user
 
-  class Game < ApplicationRecord
     def self.start(player1, player2)
       # Randomly choses who gets to be noughts or crosses
       cross, nought = [player1, player2].shuffle
@@ -38,4 +37,3 @@ class Game < ApplicationRecord
       ActionCable.server.broadcast "player_#{opponent}", {action: "new_game"}
     end
   end
-end
