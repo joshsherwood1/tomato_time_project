@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_015138) do
+ActiveRecord::Schema.define(version: 2019_10_28_180509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "game_scores", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "user_id"
+    t.integer "score", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_scores_on_game_id"
+    t.index ["user_id"], name: "index_game_scores_on_user_id"
+  end
 
   create_table "games", force: :cascade do |t|
     t.string "category"
@@ -24,6 +34,11 @@ ActiveRecord::Schema.define(version: 2019_10_27_015138) do
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "google_token"
@@ -31,5 +46,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_015138) do
     t.string "email"
   end
 
+  add_foreign_key "game_scores", "games"
+  add_foreign_key "game_scores", "users"
   add_foreign_key "games", "users"
 end
