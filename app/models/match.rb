@@ -1,19 +1,19 @@
 class Match < ApplicationRecord
-  def self.create(uuid)
+  def self.create(id)
     if !REDIS.get("matches").blank?
       # Get the uuid of the player waiting
       opponent = REDIS.get("matches")
 
-      Game.start(uuid, opponent)
+      Game.start(id, opponent)
       # Clear the waiting key as no one new is waiting
       REDIS.set("matches", nil)
     else
-      REDIS.set("matches", uuid)
+      REDIS.set("matches", id)
     end
   end
 
-  def self.remove(uuid)
-    if uuid == REDIS.get("matches")
+  def self.remove(id)
+    if id == REDIS.get("matches")
       REDIS.set("matches", nil)
     end
   end
