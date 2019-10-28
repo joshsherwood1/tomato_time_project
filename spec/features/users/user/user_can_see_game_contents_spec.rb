@@ -26,7 +26,6 @@ describe 'A registered user' do
       expect(page).to have_css('.option-3')
       expect(page).to have_css('.option-4')
     end
-
-    save_and_open_page
+    # save_and_open_page
   end
 end
