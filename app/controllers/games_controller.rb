@@ -33,8 +33,9 @@ class GamesController < ApplicationController
     scoreboard = current_user.game_score.create(game: game, user: current_user)
 
     # consume TomatoTime API
-    @questions = TomatoTimeApiService.get_data(category: game.category, difficulty: game.difficulty, amount: game.number_of_questions)
-    binding.pry #when we click start game it hits this segment
+    @fetched_questions = TomatoTimeApiService.get_data(category: game.category, difficulty: game.difficulty, amount: game.number_of_questions)
+    @questions = @fetched_questions.take(game.number_of_questions.to_i) #failsafe incase more questions get returned
+    # binding.pry #when we click start game it hits this segment
     # render game show page
     render locals: {
       questions: @questions,
