@@ -22,6 +22,7 @@ class GamesController < ApplicationController
   def destroy
     game = Game.find(params[:id])
     game.destroy
+    binding.pry
     redirect_to games_path
   end
 
