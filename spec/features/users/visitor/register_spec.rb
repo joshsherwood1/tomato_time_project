@@ -3,10 +3,12 @@ require 'rails_helper'
 RSpec.describe "Registering User" do
   it "creates new user" do
 
+  Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
+
     visit "/"
 
-    click_link 'Login/Register with Google'
-
+    click_on "Login/Register with Google"
+    
   OmniAuth.config.test_mode = true
 
   OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new(
