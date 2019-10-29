@@ -4,30 +4,30 @@
 </center>
 
 <%= form_with(url: "/calculate_score", method: :get) do  %>
-  <% questions.each_with_index do |q, i| %>
-  <div class="modal" id="myModal-<%= i %>" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+  <% @facade.questions.each_with_index do |question, index| %>
+  <div class="modal" id="myModal-<%= index %>" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="mainModalLabel">
-              Question <%= i + 1 %> of <%= @number_of_questions %>
+              Question <%= index + 1 %> of <%= @facade.number_of_questions %>
             </h4>
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
           </div>
-          <p id='question-<%= i %>'><%= q[:question] %></p>
+          <p id='question-<%= index %>'><%= question.question %></p>
           <hr>
           <ul>
-          <% q[:options].each_with_index do |option, i|  %>
-            <p id='option-<%= i + 1 %>'>
-              <%= radio_button_tag("question[#{q[:id]}]", q[:correct_answer]==option) %> <%= option %>
+          <% question.options.each_with_index do |option, index|  %>
+            <p id='option-<%= index + 1 %>'>
+              <%= radio_button_tag("question[#{question.id}]", question.correct_answer==option) %> <%= option %>
             </p>
           <% end %>
           </ul>
           <hr />
-          <% if (i + 1) == @number_of_questions %>
+          <% if (index + 1) == @facade.number_of_questions%>
             <%= submit_tag "Submit" %>
           <% else %>
-            <input value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= i + 1 %>').textContent);" type='button' class="next-btn btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= i + 1 %>' />
+            <input value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= index + 1 %>').textContent);" type='button' class="next-btn btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= index + 1 %>' />
           <% end %>
         </div>
       </div>
