@@ -1,0 +1,23 @@
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database tomato_time_2_test;' -U postgres
+
+
+language: ruby
+
+rvm:
+  - 2.4.1
+
+cache: bundler
+
+script:
+  - bundle exec rake
+
+services:
+  - redis-server
+  - postgresql
+
+# deploy:
+#   provider: heroku
+#   api_key:
+#   app: blooming-reef-34254

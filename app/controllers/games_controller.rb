@@ -33,8 +33,11 @@ class GamesController < ApplicationController
 
   def calculate_score
     number_correct = params["question"].values.count {|value| value == "true"}
-    flash[:success] = "You got #{number_correct} correct answers!!! Good job!"
-    redirect_to games_path
+    game_score = GameScore.new(user_id: current_user.id, game_id: params["game_id"].to_i, score: number_correct)
+    total_questions = game_score.game.number_of_questions
+
+    flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! Good job!"
+    redirect_to "/games/#{params["game_id"].to_i}/end"
   end
 
   private

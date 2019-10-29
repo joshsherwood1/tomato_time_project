@@ -14,7 +14,7 @@ describe 'A registered user' do
     #cannot get capybara to select option button
     within '#myModal-0' do
 
-      :visible => false).click
+      choose('.question_424_false')
       # choose("Russia", allow_label_click: true)
       # click_on ("Russia")
       # find(:css, '.question_424_false').click

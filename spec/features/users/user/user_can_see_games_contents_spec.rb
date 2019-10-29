@@ -10,7 +10,7 @@ describe 'A registered user' do
 
     within ".games" do
       within "#game-#{game_1.id}" do
-        click_link("Start")
+        click_button("Start")
       end
     end
 

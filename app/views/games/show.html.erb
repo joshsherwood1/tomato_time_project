@@ -4,9 +4,11 @@
 </center>
 
 <%= form_with(url: "/calculate_score", method: :get) do  %>
+<input type="hidden" id="game_id" name="game_id" value="<%= @facade.game.id %>" />
   <% @facade.questions.each_with_index do |question, index| %>
   <div class="modal" id="myModal-<%= index %>" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="mainModalLabel">

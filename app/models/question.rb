@@ -1,5 +1,4 @@
 class Question
-
   attr_reader :id, :category, :difficulty, :question, :correct_answer, :options
   def initialize(question)
     @id = question[:id]
