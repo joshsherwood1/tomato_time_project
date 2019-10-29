@@ -77,12 +77,9 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-<<<<<<< HEAD
     connection_pool (2.2.2)
-=======
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
->>>>>>> game_session_score_MH
     crass (1.0.5)
     diff-lcs (1.3)
     docile (1.3.2)
