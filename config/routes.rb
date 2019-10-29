@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'welcome#index'
@@ -7,7 +9,8 @@ Rails.application.routes.draw do
   get "/register", to: "users#new"
   resources :games, only: [:new, :create, :show]
 
-  post '/notification', to: "notification#create"
+  post '/:game_id/notification', to: "notification#create", as: :notification
+  mount Sidekiq::Web => '/sidekiq'
 
   # Routes for Google authentication
   get "/auth/:provider/callback", to: "sessions#googleAuth"
