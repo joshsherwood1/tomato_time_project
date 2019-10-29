@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     get "/:id/end", to: "end#show"
   end
 
-  post '/:game_id/notification', to: "notification#create", as: :notification
   mount Sidekiq::Web => '/sidekiq'
 
   # Routes for Google authentication
