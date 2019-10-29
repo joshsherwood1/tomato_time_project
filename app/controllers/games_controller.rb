@@ -45,7 +45,9 @@ class GamesController < ApplicationController
   end
 
   def calculate_score
-
+    number_correct = params["question"].values.count {|value| value == "true"}
+    flash[:success] = "You got #{number_correct} correct answers!!! Good job!"
+    redirect_to games_path
   end
 
   private
