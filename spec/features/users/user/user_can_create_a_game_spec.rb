@@ -27,6 +27,5 @@ describe 'A registered user' do
     expect(game.category).to eq("Movies")
     expect(game.difficulty).to eq("medium")
     expect(game.number_of_questions).to eq("2")
-
   end
 end
