@@ -8,23 +8,18 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   get "/register", to: "users#new"
   get "/calculate_score", to: "games#calculate_score"
-  resources :games, only: [:new, :create, :show]
-<<<<<<< HEAD
+
+  resources :games, except: [:edit, :update]
+
+  namespace :games do
+    get "/:id/end", to: "end#show"
+  end
 
   post '/:game_id/notification', to: "notification#create", as: :notification
   mount Sidekiq::Web => '/sidekiq'
 
-=======
-  namespace :games do
-    get "/:id/end", to: "end#show"
-  end
->>>>>>> game_session_score_MH
   # Routes for Google authentication
   get "/auth/:provider/callback", to: "sessions#googleAuth"
   get "/auth/failure", to: redirect("/")
   get "/profile", to: "users#show"
-
-
-  resources :games, only:[:index, :destroy]
-
 end
