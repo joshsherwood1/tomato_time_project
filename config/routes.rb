@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
   get "/register", to: "users#new"
-  get "/end_game", to: "games#calculate_score"
+  get "/calculate_score", to: "games#calculate_score"
   resources :games, only: [:new, :create, :show]
 
   # Routes for Google authentication
