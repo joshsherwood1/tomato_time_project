@@ -49,7 +49,7 @@ class GamesController < ApplicationController
     total_questions = params["question"].values.count
     game_score = GameScore.new(user_id: current_user.id, game_id: params["game_id"].to_i, score: number_correct)
     flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! Good job!"
-    redirect_to "/games/#{params["game_id"].to_i}/stats"
+    redirect_to "/games/#{params["game_id"].to_i}/end"
   end
 
   private

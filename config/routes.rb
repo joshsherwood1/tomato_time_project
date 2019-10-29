@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/calculate_score", to: "games#calculate_score"
   resources :games, only: [:new, :create, :show]
   namespace :games do
-    get "/:id/stats", to: "stats#show"
+    get "/:id/end", to: "end#show"
   end
   # Routes for Google authentication
   get "/auth/:provider/callback", to: "sessions#googleAuth"
