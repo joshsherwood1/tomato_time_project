@@ -30,6 +30,9 @@ module TomatoTime2
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # ActiveJob: Sidekiq
+    config.active_job.queue_adapter = :sidekiq
+
     # ActionMailer
     config.action_mailer.delivery_method = :smtp
 
