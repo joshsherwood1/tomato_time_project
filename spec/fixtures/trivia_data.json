@@ -1,29 +1,167 @@
-[{:id=>424,
-  :category=>"Geography",
-  :difficulty=>"easy",
-  :question=>"What country is the second largest in the world by area?",
-  :correct_answer=>"Canada",
-  :options=>["Russia", "China", "United States of America", "Canada"],
-  :created_at=>"2019-10-27T19:38:35.071Z",
-  :updated_at=>"2019-10-27T19:38:35.071Z"},
-{:id=>429,
-  :category=>"Geography",
-  :difficulty=>"easy",
-  :question=>"All of the following are classified as Finno-Ugric languages EXCEPT:",
-  :correct_answer=>"Samoyedic",
-  :options=>["Hungarian", "Finnish", "Estonian", "Samoyedic"],
-  :created_at=>"2019-10-27T19:38:35.110Z",
-  :updated_at=>"2019-10-27T19:38:35.110Z"},
-{:id=>430,
-  :category=>"Geography",
-  :difficulty=>"easy",
-  :question=>
-   "The derisive acronym PIIGS refers to which of the following European countries and their economic statuses?",
-  :correct_answer=>"Portugal, Ireland, Italy, Greece, Spain",
-  :options=>
-   ["Poland, Iceland, Italy, Greece, Serbia",
-    "Poland, Iceland, Italy, Greenland, Spain",
-    "Portugal, Iceland, Ireland, Greece, Serbia",
-    "Portugal, Ireland, Italy, Greece, Spain"],
-  :created_at=>"2019-10-27T19:38:35.127Z",
-  :updated_at=>"2019-10-27T19:38:35.127Z"}]
+[
+    {
+        "id": 424,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "What country is the second largest in the world by area?",
+        "correct_answer": "Canada",
+        "options": [
+            "Russia",
+            "China",
+            "United States of America",
+            "Canada"
+        ],
+        "created_at": "2019-10-27T19:38:35.071Z",
+        "updated_at": "2019-10-27T19:38:35.071Z"
+    },
+    {
+        "id": 429,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "All of the following are classified as Finno-Ugric languages EXCEPT:",
+        "correct_answer": "Samoyedic",
+        "options": [
+            "Hungarian",
+            "Finnish",
+            "Estonian",
+            "Samoyedic"
+        ],
+        "created_at": "2019-10-27T19:38:35.110Z",
+        "updated_at": "2019-10-27T19:38:35.110Z"
+    },
+    {
+        "id": 430,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "The derisive acronym PIIGS refers to which of the following European countries and their economic statuses?",
+        "correct_answer": "Portugal, Ireland, Italy, Greece, Spain",
+        "options": [
+            "Poland, Iceland, Italy, Greece, Serbia",
+            "Poland, Iceland, Italy, Greenland, Spain",
+            "Portugal, Iceland, Ireland, Greece, Serbia",
+            "Portugal, Ireland, Italy, Greece, Spain"
+        ],
+        "created_at": "2019-10-27T19:38:35.127Z",
+        "updated_at": "2019-10-27T19:38:35.127Z"
+    },
+    {
+        "id": 435,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "What name was historically used for the Turkish city currently known as Istanbul?",
+        "correct_answer": "Constaninople",
+        "options": [
+            "H&uuml;davendigar",
+            "S&ouml;ğ&uuml;t",
+            "Adrianople",
+            "Constaninople"
+        ],
+        "created_at": "2019-10-27T19:38:35.181Z",
+        "updated_at": "2019-10-27T19:38:35.181Z"
+    },
+    {
+        "id": 436,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "Which US state has the highest population?",
+        "correct_answer": "California",
+        "options": [
+            "New York",
+            "Texas",
+            "Florida",
+            "California"
+        ],
+        "created_at": "2019-10-27T19:38:35.188Z",
+        "updated_at": "2019-10-27T19:38:35.188Z"
+    },
+    {
+        "id": 438,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "What is the official language of Costa Rica?",
+        "correct_answer": "Spanish",
+        "options": [
+            "English",
+            "Portuguese",
+            "Creole",
+            "Spanish"
+        ],
+        "created_at": "2019-10-27T19:38:35.223Z",
+        "updated_at": "2019-10-27T19:38:35.223Z"
+    },
+    {
+        "id": 440,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "What country has a horizontal bicolor red and white flag?",
+        "correct_answer": "Monaco",
+        "options": [
+            "Bahrain",
+            "Malta",
+            "Liechenstein",
+            "Monaco"
+        ],
+        "created_at": "2019-10-27T19:38:35.237Z",
+        "updated_at": "2019-10-27T19:38:35.237Z"
+    },
+    {
+        "id": 449,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "Which country is the home of the largest Japanese population outside of Japan?",
+        "correct_answer": "Brazil",
+        "options": [
+            "China",
+            "Russia",
+            "The United States",
+            "Brazil"
+        ],
+        "created_at": "2019-10-27T19:38:35.327Z",
+        "updated_at": "2019-10-27T19:38:35.327Z"
+    },
+    {
+        "id": 454,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "What is the Polish city known to Germans as Danzig?",
+        "correct_answer": "Gdańsk",
+        "options": [
+            "Warsaw",
+            "Zakopane",
+            "Poznań",
+            "Gdańsk"
+        ],
+        "created_at": "2019-10-27T19:38:35.355Z",
+        "updated_at": "2019-10-27T19:38:35.355Z"
+    },
+    {
+        "id": 459,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "Which of the following countries has a flag featuring a yellow lion wielding a sword on a dark red background?",
+        "correct_answer": "Sri Lanka",
+        "options": [
+            "Kiribati",
+            "Scotland",
+            "Bhutan",
+            "Sri Lanka"
+        ],
+        "created_at": "2019-10-27T19:38:35.385Z",
+        "updated_at": "2019-10-27T19:38:35.385Z"
+    },
+    {
+        "id": 466,
+        "category": "Geography",
+        "difficulty": "easy",
+        "question": "The Alps are a mountain range on which continent?",
+        "correct_answer": "Europe",
+        "options": [
+            "North America",
+            "Asia",
+            "Africa",
+            "Europe"
+        ],
+        "created_at": "2019-10-27T19:38:35.425Z",
+        "updated_at": "2019-10-27T19:38:35.425Z"
+    }
+]

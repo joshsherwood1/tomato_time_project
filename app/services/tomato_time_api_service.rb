@@ -10,7 +10,6 @@ class TomatoTimeApiService
       amount: amount
     }
     json = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
   end
 
 
