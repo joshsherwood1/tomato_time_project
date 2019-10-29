@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'A registered user' do
   it 'can see game contents on clicking start button' do
+    WebMock.allow_net_connect!
     user = User.create!(username: "User Name", email: "email@email.com", google_token: "token")
     game_1 = Game.create!(custom_name: "BookTime", category: "Entertainment: Books", number_of_questions: "10", difficulty: "easy", user_id: user.id)
 
@@ -21,10 +22,10 @@ describe 'A registered user' do
     within '#myModal-0' do
       expect(page).to have_content('Question')
       expect(page).to have_css('#question-0')
-      expect(page).to have_css('.option-1')
-      expect(page).to have_css('.option-2')
-      expect(page).to have_css('.option-3')
-      expect(page).to have_css('.option-4')
+      expect(page).to have_css('#option-1')
+      expect(page).to have_css('#option-2')
+      expect(page).to have_css('#option-3')
+      expect(page).to have_css('#option-4')
     end
   end
 end
