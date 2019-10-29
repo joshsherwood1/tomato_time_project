@@ -19,7 +19,7 @@ describe 'A registered user' do
         expect(page).to have_content(game_1.category)
         expect(page).to have_content(game_1.number_of_questions)
         expect(page).to have_content(game_1.difficulty)
-        expect(page).to have_link("Start")
+        expect(page).to have_button("Start")
         expect(page).to have_button("Delete")
       end
       within "#game-#{game_2.id}" do
@@ -27,7 +27,7 @@ describe 'A registered user' do
         expect(page).to have_content(game_2.category)
         expect(page).to have_content(game_2.number_of_questions)
         expect(page).to have_content(game_2.difficulty)
-        expect(page).to have_link("Start")
+        expect(page).to have_button("Start")
         expect(page).to have_button("Delete")
       end
       within "#game-#{game_3.id}" do
@@ -35,7 +35,7 @@ describe 'A registered user' do
         expect(page).to have_content(game_3.category)
         expect(page).to have_content(game_3.number_of_questions)
         expect(page).to have_content(game_3.difficulty)
-        expect(page).to have_link("Start")
+        expect(page).to have_button("Start")
         expect(page).to have_button("Delete")
       end
     end
