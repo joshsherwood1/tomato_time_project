@@ -4,15 +4,15 @@
 </center>
 
 <%= form_with(url: "/calculate_score", method: :get) do  %>
-<input type="hidden" id="game_id" name="game_id" value="<%= @facade.game.id %>" />
-  <% @facade.questions.each_with_index do |question, index| %>
+<input type="hidden" id="game_id" name="game_id" value="<%= game_id %>" />
+  <% questions.each_with_index do |question, index| %>
   <div class="modal" id="myModal-<%= index %>" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
     <div class="modal-dialog">
 
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="mainModalLabel">
-              Question <%= index + 1 %> of <%= @facade.number_of_questions %>
+              Question <%= index + 1 %> of <%= total_questions %>
             </h4>
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
           </div>
@@ -26,7 +26,7 @@
           <% end %>
           </ul>
           <hr />
-          <% if (index + 1) == @facade.number_of_questions%>
+          <% if (index + 1) == total_questions %>
             <%= submit_tag "Submit" %>
           <% else %>
             <input value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= index + 1 %>').textContent);" type='button' class="next-btn btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= index + 1 %>' />
@@ -37,4 +37,4 @@
   <% end %>
 <% end %>
 
-<%= button_to 'Send email', notification_path(game) %>
+<!-- < %= button_to 'Send email', notification_path(game_id) %> -->

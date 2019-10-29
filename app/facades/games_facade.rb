@@ -11,13 +11,15 @@ class GamesFacade
     end
   end
 
+  def number_of_questions
+    @game.number_of_questions.to_i
+  end
+
+  private
+
   def get_questions
     TomatoTimeApiService.get_data(category: @game.category,
                                   difficulty: @game.difficulty,
                                   amount: @game.number_of_questions)
-  end
-
-  def number_of_questions
-    @game.number_of_questions.to_i
   end
 end
