@@ -52,6 +52,7 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'active_designer'
+  gem 'webmock'
 end
 
 group :development do
