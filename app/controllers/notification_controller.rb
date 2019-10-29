@@ -1,6 +1,6 @@
 class NotificationController < ApplicationController
   def create
-    UserNotifierMailer.inform(current_user, current_user.email).deliver_now
-    # redirect_to root_url
+    SummarySenderJob.perform_later(current_user, {correct: 3, total: 10})
+    redirect_to game_path(params[:game_id])
   end
 end
