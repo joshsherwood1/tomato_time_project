@@ -5,13 +5,11 @@ class GamesController < ApplicationController
   def index
     @user = current_user
     @games = current_user.games
-
   end
 
   def create
     game = current_user.games.create(game_params)
     if game.save
-      #QuestionAnswersApi.new(game).get_questions_and_answers
       redirect_to "/games"
     else
       flash[:error] = game.errors.full_messages.to_sentence
