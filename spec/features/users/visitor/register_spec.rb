@@ -5,7 +5,6 @@ RSpec.describe "Registering User" do
 
     OmniAuth.config.test_mode = true
 
-
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
       { "provider"=>"google_oauth2",
         "uid"=>"102297144359869040270",
@@ -30,12 +29,12 @@ RSpec.describe "Registering User" do
     click_on "Login/Register with Google"
 
     expect(current_path).to eq("/games")
-    expect(page).to_have button("Logout")
+
+    expect(page).to have_link("Logout")
 
     user = User.last
 
     expect(user.email).to eq("jkjgsherwood@gmail.com")
-    expect(user.first_name).to eq("Josh")
-    expect(user.last_name).to eq("Sherwood")
+    expect(user.username).to eq("Josh Sherwood")
   end
 end
