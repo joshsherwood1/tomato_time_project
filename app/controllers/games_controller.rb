@@ -24,10 +24,12 @@ class GamesController < ApplicationController
   end
 
   def show
-    @facade = GamesFacade.new(current_user, params[:id])
+    facade = GamesFacade.new(current_user, params[:id])
+
     render locals: {
-      questions: @facade.questions,
-      score: @facade.number_of_questions
+      game_id: params[:id],
+      questions: facade.questions,
+      total_questions: facade.number_of_questions
     }
   end
 
