@@ -1,11 +1,11 @@
 class GamesController < ApplicationController
-
   def new
   end
 
   def index
-    @games = current_user.games
     @user = current_user
+    @games = current_user.games
+
   end
 
   def create
@@ -27,6 +27,7 @@ class GamesController < ApplicationController
 
   def show
     # game spec
+
     game = current_user.games.find(params[:id])
 
     # create a new game_score object
@@ -34,6 +35,7 @@ class GamesController < ApplicationController
 
     # consume TomatoTime API
     @questions = TomatoTimeApiService.get_data(category: game.category, difficulty: game.difficulty, amount: game.number_of_questions)
+    @number_of_questions = game.number_of_questions.to_i
 
     # render game show page
     render locals: {
@@ -42,8 +44,11 @@ class GamesController < ApplicationController
     }
   end
 
-  private
+  def end_game
+    binding.pry
+  end
 
+  private
   def game_params
     params.permit(:custom_name, :number_of_questions, :category, :difficulty)
   end
