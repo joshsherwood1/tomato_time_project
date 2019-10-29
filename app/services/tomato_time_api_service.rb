@@ -4,7 +4,7 @@ class TomatoTimeApiService
   end
 
   def get_data(category, difficulty, amount)
-    response = conn.get 'questions', {
+    response = conn.get 'https://tomato-time-api.herokuapp.com/api/v1/questions', {
       category: category,
       difficulty: difficulty,
       amount: amount
