@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/register", to: "users#new"
   resources :games, only: [:new, :create, :show]
 
+  post '/notification', to: "notification#create"
+
   # Routes for Google authentication
   get "/auth/:provider/callback", to: "sessions#googleAuth"
   get "/auth/failure", to: redirect("/")
