@@ -24,22 +24,10 @@ class GamesController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
-    # game spec
-    game = current_user.games.find(params[:id])
-    # consume TomatoTime API
-    questions = TomatoTimeApiService.get_data(category: game.category, difficulty: game.difficulty, amount: game.number_of_questions)
-
-    # render game show page
-    render locals: {
-      game: game,
-      questions: questions
-=======
     @facade = GamesFacade.new(current_user, params[:id])
     render locals: {
       questions: @facade.questions,
       score: @facade.number_of_questions
->>>>>>> game_session_score_MH
     }
   end
 
