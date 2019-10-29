@@ -10,7 +10,7 @@ describe 'A registered user' do
 
     within ".games" do
       within "#game-#{game_1.id}" do
-        click_link("Start")
+        click_button("Start")
       end
     end
 
@@ -26,7 +26,5 @@ describe 'A registered user' do
       expect(page).to have_css('.option-3')
       expect(page).to have_css('.option-4')
     end
-
-    save_and_open_page
   end
 end
