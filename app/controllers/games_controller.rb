@@ -44,8 +44,8 @@ class GamesController < ApplicationController
     }
   end
 
-  def end_game
-    binding.pry
+  def calculate_score
+
   end
 
   private
