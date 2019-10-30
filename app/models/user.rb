@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates_presence_of :username, :email
   has_many :games
-  has_many :game_score
+  has_many :game_score, :dependent => :destroy
 
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_initialize do |user|
@@ -11,6 +11,6 @@ class User < ApplicationRecord
   end
 
   def total_games_played
-    games.count
+    game_score.count
   end
 end
