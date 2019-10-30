@@ -17,14 +17,14 @@ describe 'A registered user' do
     click_button "Create Game"
 
     expect(current_path).to eq("/games")
-    expect(page).to have_content("Movies")
+    expect(page).to have_content("Entertainment: Film")
     expect(page).to have_content("medium")
     expect(page).to have_content("2")
     expect(page).to have_content(name)
 
     game = Game.last
     expect(game.custom_name).to eq(name)
-    expect(game.category).to eq("Movies")
+    expect(game.category).to eq("Entertainment: Film")
     expect(game.difficulty).to eq("medium")
     expect(game.number_of_questions).to eq("2")
 
