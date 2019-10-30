@@ -23,3 +23,6 @@ log
 
 # Ignore application configuration
 /config/application.yml
+
+# Redis
+dump.rdb

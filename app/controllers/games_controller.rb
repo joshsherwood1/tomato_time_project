@@ -24,10 +24,12 @@ class GamesController < ApplicationController
   end
 
   def show
-    @facade = GamesFacade.new(current_user, params[:id])
+    facade = GamesFacade.new(current_user, params[:id])
+
     render locals: {
-      questions: @facade.questions,
-      score: @facade.number_of_questions
+      game_id: params[:id],
+      questions: facade.questions,
+      total_questions: facade.number_of_questions
     }
   end
 
@@ -36,6 +38,9 @@ class GamesController < ApplicationController
     game_score = GameScore.create(user_id: current_user.id, game_id: params["game_id"].to_i, score: number_correct)
     total_questions = game_score.game.number_of_questions
 
+    result = {correct: number_correct, total: total_questions}
+    send_email(current_user, result)
+
     flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! Good job!"
     redirect_to "/games/#{params["game_id"].to_i}/end"
   end
@@ -43,5 +48,9 @@ class GamesController < ApplicationController
   private
   def game_params
     params.permit(:custom_name, :number_of_questions, :category, :difficulty)
+  end
+
+  def send_email(current_user, result)
+    SummarySenderJob.perform_later(current_user, result)
   end
 end
