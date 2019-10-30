@@ -1,10 +1,43 @@
+<div class="container" id="stats-table">
+  <h4><%= @user.username %>'s Game Stats</h4>
+  <br>
+  <section class='game-stats'>
 
-<%= @user.username %>
+    <p class='total-games-played'><strong>Total Games Played: <%= @user.total_games_played %></strong></p>
+    <section class='clear-stats'>
+      <% unless @user.game_score.empty? %>
+        <%= link_to "Delete all", "/profile", confirm: 'Are you sure?', method: :delete, class: 'btn btn-primary' %>
+      <% end %>
+    </section>
+    <br>
 
-<h4>Your Game Stats</h4>
-
-<h4>Number of Games Played</h4>
-
-<h4>Number of Games Won</h4>
-
-<h4>Number of Correctly Answered Questions</h4>
+    <table class="table table-bordered">
+      <thead class="text-center thead-light">
+        <tr>
+          <th style="width: 20%;">Game Name</th>
+          <th>My Score</th>
+          <th>Total # of Questions</th>
+          <th>% Score</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <% @user.game_score.each do |stat| %>
+        <tr id='game-<%= stat.game_id %>'>
+          <td>
+            <%= stat.game_name %>
+          </td>
+          <td>
+            <%= stat.score %>
+          </td>
+          <td>
+            <%= stat.game_total_questions %>
+          </td>
+          <td>
+            <%= stat.game_percent_score.round(2) %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</div>

@@ -41,7 +41,7 @@ describe 'A registered user' do
     end
   end
 
-  xit 'can delete a game' do
+  it 'can delete a game' do
     user = User.create!(username: "User Name", email: "email@email.com", google_token: "token")
     game_1 = Game.create!(custom_name: "MathTime", category: "Math", number_of_questions: "10", difficulty: "easy", user_id: user.id)
     game_2 = Game.create!(custom_name: "SpellingTime", category: "Spelling", number_of_questions: "20", difficulty: "hard", user_id: user.id)
@@ -54,10 +54,14 @@ describe 'A registered user' do
     within "#game-#{game_3.id}" do
       click_button("Delete")
     end
-    save_and_open_page
+
+    user.reload
+
+    visit "/games"
+
     expect(current_path).to eq("/games")
 
-    expect(page).to_not have_content("#{game_3.custom_name}")
+    expect(page).to_not have_content("FoodTime")
 
     expect(page).to have_css("#game-#{game_1.id}")
     expect(page).to have_css("#game-#{game_2.id}")

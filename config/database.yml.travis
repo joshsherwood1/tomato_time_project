@@ -1,24 +1,9 @@
-# PostgreSQL. Versions 9.1 and up are supported.
-#
-# Install the pg driver:
-#   gem install pg
-# On OS X with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On OS X with MacPorts:
-#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
-#   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
-#
-# Configure Using Gemfile
-# gem 'pg'
-#
+
 default: &default
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -29,7 +14,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: tomato_time_2
+  #username: tomato_time
 
   # The password associated with the postgres role (username).
   #password:
@@ -55,16 +40,24 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+# test:
+#   <<: *default
+#   database: tomato_time_test
+# test:
+#   adapter: postgresql
+#   database: travis_ci_test
+
 test:
   adapter: postgresql
   database: tomato_time_2_test
+  username: travis
   encoding: utf8
-# As with config/secrets.yml, you never want to store sensitive information,
+# As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
 #
 # Instead, provide the password as a unix environment variable when you boot
-# the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database
+# the app. Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full rundown on how to provide these environment variables in a
 # production deployment.
 #
@@ -82,4 +75,4 @@ production:
   <<: *default
   database: tomato_time_2_production
   username: tomato_time_2
-  password: <%= ENV['TOMATO_TIME_2_DATABASE_PASSWORD'] %>
+  password: <%= ENV['TOMATO_TIME_DATABASE_PASSWORD'] %>

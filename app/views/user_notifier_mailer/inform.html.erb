@@ -1,0 +1,5 @@
+<% production = "https://peaceful-chamber-62417.herokuapp.com" %>
+<% dev_test = "http://localhost:3000" %>
+<% url = Rails.env == 'production' ? production : dev_test %>
+
+Hi <%= @user.username %>! You got <%= @score[:correct] %> correct answers out of <%= @score[:total] %> quesitons!!! Good job! Click <%= link_to 'here', url %> to play another game!

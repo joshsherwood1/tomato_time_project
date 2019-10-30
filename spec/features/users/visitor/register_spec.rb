@@ -1,28 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "Registering User" do
-  xit "creates new user" do
+  it "creates new user" do
 
-    stub_omniauth
-
-    visit "/"
-
-
-    click_link 'Login/Register with Google'
-
-    expect(current_path).to eq("/profile")
-
-    user = User.last
-
-    expect(user.email).to eq("mackenzie.halliday@gmail.com")
-    expect(user.first_name).to eq("Mackenzie")
-    expect(user.last_name).to eq("Halliday")
-  end
-
-  def stub_omniauth
     OmniAuth.config.test_mode = true
 
-    OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new(
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
       { "provider"=>"google_oauth2",
         "uid"=>"102297144359869040270",
         "info"=>
@@ -40,5 +23,18 @@ RSpec.describe "Registering User" do
             "expires"=>true}
         }
         )
-    end
+
+    visit "/"
+
+    click_on "Login/Register with Google"
+
+    expect(current_path).to eq("/games")
+
+    expect(page).to have_link("Logout")
+
+    user = User.last
+
+    expect(user.email).to eq("jkjgsherwood@gmail.com")
+    expect(user.username).to eq("Josh Sherwood")
+  end
 end
