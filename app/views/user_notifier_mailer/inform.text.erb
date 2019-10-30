@@ -2,4 +2,9 @@
 <% dev_test = "http://localhost:3000" %>
 <% url = Rails.env == 'production' ? production : dev_test %>
 
-Hi <%= @user.username %>! You got <%= @score[:correct] %> correct answers out of <%= @score[:total] %> quesitons!!! Good job! Click <%= link_to 'here', url %> to play another game!
+Hi <%= @user.username %>!
+Here is a daily summary of your game scores from Tomato Time.
+<% @digest.each do |d| %>
+  You played strong<%= d[:game] %> <%= d[:count] %> times and got an average score of <%= d[:score] %>!
+<% end %>
+Click <%= link_to 'here', url %> to play another game!
