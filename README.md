@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+[![View performance data on Skylight](https://badges.skylight.io/status/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
