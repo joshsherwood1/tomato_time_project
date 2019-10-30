@@ -2,11 +2,11 @@
   <h4><%= @user.username %>'s Game Stats</h4>
   <br>
   <section class='game-stats'>
-    
+
     <p class='total-games-played'><strong>Total Games Played: <%= @user.total_games_played %></strong></p>
     <section class='clear-stats'>
-      <% unless @user.games.empty? %>
-        <%= link_to "Delete all", "/profile/clear_stats", method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+      <% unless @user.game_score.empty? %>
+        <%= link_to "Delete all", "/profile", confirm: 'Are you sure?', method: :delete, class: 'btn btn-primary' %>
       <% end %>
     </section>
     <br>

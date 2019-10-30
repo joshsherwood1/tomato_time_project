@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#googleAuth"
   get "/auth/failure", to: redirect("/")
   get "/profile", to: "users#show"
-  delete "/profile/clear_stats", to: "games_score#destroy"
+  delete "/profile", to: "games_score#destroy"
 
   resources :games, only:[:index, :destroy]
 end
