@@ -9,4 +9,8 @@ class User < ApplicationRecord
       user.email = auth.info.email
     end
   end
+
+  def total_games_played
+    games.count
+  end
 end
