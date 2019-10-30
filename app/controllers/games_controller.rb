@@ -33,7 +33,7 @@ class GamesController < ApplicationController
 
   def calculate_score
     number_correct = params["question"].values.count {|value| value == "true"}
-    game_score = GameScore.new(user_id: current_user.id, game_id: params["game_id"].to_i, score: number_correct)
+    game_score = GameScore.create(user_id: current_user.id, game_id: params["game_id"].to_i, score: number_correct)
     total_questions = game_score.game.number_of_questions
 
     flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! Good job!"
