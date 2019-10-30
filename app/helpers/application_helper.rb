@@ -18,10 +18,10 @@ module ApplicationHelper
     [
       ['Geography', 'Geography'],
       ['History', 'History'],
-      ['Books', 'Books'],
-      ['Movies', 'Movies'],
-      ['Television', 'Television'],
-      ['Music', 'Music'],
+      ['Books', 'Entertainment: Books'],
+      ['Movies', 'Entertainment: Film'],
+      ['Television', 'Entertainment: Television'],
+      ['Music', 'Entertainment: Music'],
       ['General Knowledge', 'General Knowledge'],
       ['Science & Nature', 'Science & Nature'],
     ]
