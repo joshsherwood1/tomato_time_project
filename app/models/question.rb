@@ -6,6 +6,6 @@ class Question
     @difficulty = question[:difficulty]
     @question = question[:question]
     @correct_answer = question[:correct_answer]
-    @options = question[:options]
+    @options = question[:options].shuffle
   end
 end

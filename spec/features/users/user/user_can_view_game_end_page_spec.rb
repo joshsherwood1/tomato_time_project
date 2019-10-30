@@ -9,8 +9,6 @@ describe 'A registered user' do
 
     visit "/games/#{game_1.id}/end"
 
-    #expect(page).to have_content("You got #{number_correct} correct answers out of #{total_questions}!!! Good job!")
-
     within ".games_info" do
       expect(page).to have_content(game_1.custom_name)
       expect(page).to have_content(game_1.category)

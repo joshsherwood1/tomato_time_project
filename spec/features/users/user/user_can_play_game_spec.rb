@@ -14,14 +14,9 @@ describe 'A registered user' do
 
     click_button('Play Game')
 
-    #cannot get capybara to select option button
+
     within '#myModal-0' do
       choose('question_424_true')
-      # select('.question_424_false')
-      # choose(option: 'Russia', allow_label_click: true)
-      # choose("Russia", allow_label_click: true)
-      # click_on ("Russia")
-      # find(:css, '.question_424_false').click
       click_button('Next')
     end
 
@@ -32,19 +27,16 @@ describe 'A registered user' do
 
     within '#myModal-2' do
       choose('question_430_true')
-      # click_button('.option-1')
       click_button('Next')
     end
 
     within '#myModal-3' do
       choose('question_435_true')
-      # click_button('.option-1')
       click_button('Next')
     end
 
     within '#myModal-4' do
       choose('question_436_true')
-      # click_button('.option-1')
       click_button('Submit')
     end
 
