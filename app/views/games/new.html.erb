@@ -2,7 +2,7 @@
 
 <center>
   <%= form_tag "/games", method: :post do %>
-    <%= label_tag "Customer name:" %>
+    <%= label_tag "Custom name:" %>
     <%= text_field_tag :custom_name, nil, placeholder: "Name" %> <br>
     <%= label_tag "Total Number of Trivia Questions:" %>
     <%= select_tag(:number_of_questions, options_for_select(questions), {class: "select-field"}) %><br>
