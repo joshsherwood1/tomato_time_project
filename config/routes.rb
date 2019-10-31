@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get "/profile", to: "users#show"
   get "/invite", to: "users#invite"
+  get "/send_invite", to: "users#send_invite"
 
   get "/calculate_score", to: "games#calculate_score"
   resources :games, except: [:edit, :update]
