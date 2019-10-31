@@ -48,3 +48,19 @@ To consume an external trivia API we used services in a Sinatra application. The
     [![View performance data on Skylight](https://badges.skylight.io/typical/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
     [![View performance data on Skylight](https://badges.skylight.io/rpm/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
     [![View performance data on Skylight](https://badges.skylight.io/status/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
+    
+    
+  # Development Team
+    
+<img width="150" height="150" alt="Screen Shot 2019-10-30 at 10 09 25 PM" src="https://user-images.githubusercontent.com/33855435/67918475-21909100-fb62-11e9-88be-f2fa30715580.png">
+https://github.com/MackHalliday
+
+<img width="150" height="150"  alt="Screen Shot 2019-10-30 at 10 09 42 PM" src="https://user-images.githubusercontent.com/33855435/67918498-3b31d880-fb62-11e9-86ce-00b06f82f749.png">
+https://github.com/nancylee713
+
+<img width="150" height="150"  alt="Screen Shot 2019-10-30 at 10 09 10 PM" src="https://user-images.githubusercontent.com/33855435/67918514-4b49b800-fb62-11e9-99b2-4a3bdf21a3a7.png">
+https://github.com/joshsherwood1
+
+<img width="150" height="150"  alt="Screen Shot 2019-10-30 at 10 09 00 PM" src="https://user-images.githubusercontent.com/33855435/67918529-556bb680-fb62-11e9-9a8f-1fbb49d239ea.png">
+https://github.com/scottzero
+
