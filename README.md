@@ -34,6 +34,10 @@ To consume an external trivia API we used services in a Sinatra application. The
     $ cd tomato_time_project
     $ bundle
     '''
+# Database Schema 
+
+<img width="1235" alt="Screen Shot 2019-10-31 at 11 49 39 AM" src="https://user-images.githubusercontent.com/33855435/67990814-9d3f1c00-fbfc-11e9-9a04-aa9a8a6e85d7.png">
+
 # Setup Database
     '''
     $ rails db:{drop,create,migrate,seed}
