@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
-  get "/register", to: "users#new"
-  get "/calculate_score", to: "games#calculate_score"
 
+  get "/profile", to: "users#show"
+  get "/invite", to: "users#invite"
+  get "/send_invite", to: "users#send_invite"
+
+  get "/calculate_score", to: "games#calculate_score"
   resources :games, except: [:edit, :update]
 
   namespace :games do
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
   # Routes for Google authentication
   get "/auth/:provider/callback", to: "sessions#googleAuth"
   get "/auth/failure", to: redirect("/")
-  get "/profile", to: "users#show"
+
 
   delete "/profile", to: "games_score#destroy"
 
