@@ -16,7 +16,7 @@
             </h4>
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
           </div>
-          <p id='question-<%= index %>'><%= question.question %></p>
+          <p class='question' id='question-<%= index %>'><%= question.question %></p>
           <hr>
           <ul>
           <% question.options.each_with_index do |option, index|  %>
@@ -27,7 +27,7 @@
           </ul>
           <hr />
           <% if (index + 1) == total_questions %>
-            <%= submit_tag "Submit" %>
+            <%= submit_tag "Submit", {class: 'btn btn-primary btn-lg btn-block'} %>
           <% else %>
             <input value='Next' onclick="responsiveVoice.speak(document.getElementById('question-<%= index + 1 %>').textContent);" type='button' class="next-btn btn btn-primary btn-lg btn-block" data-dismiss='modal' data-toggle='modal' data-target='#myModal-<%= index + 1 %>' />
           <% end %>
