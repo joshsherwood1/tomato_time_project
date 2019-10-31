@@ -35,17 +35,13 @@ To consume an external trivia API we used services in a Sinatra application. The
     $ bundle
     '''
 # Database Schema 
-
-<img width="1235" alt="Screen Shot 2019-10-31 at 11 49 39 AM" src="https://user-images.githubusercontent.com/33855435/67990814-9d3f1c00-fbfc-11e9-9a04-aa9a8a6e85d7.png">
+<img width="838" alt="Screen Shot 2019-10-31 at 4 35 28 PM" src="https://user-images.githubusercontent.com/33855435/67990849-c3fd5280-fbfc-11e9-9016-e5f6a177914d.png">
 
 # Setup Database
     '''
     $ rails db:{drop,create,migrate,seed}
     '''
-# Database Schema
-<img width="838" alt="Screen Shot 2019-10-31 at 4 35 28 PM" src="https://user-images.githubusercontent.com/33855435/67990849-c3fd5280-fbfc-11e9-9016-e5f6a177914d.png">
-
-
+    
 # Testing
     Integration testing and Unit testing is implemented with RSpec and can be run with $ bundle exec rspec
 
