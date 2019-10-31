@@ -1,6 +1,6 @@
 # Tomato Time Trivia
 
-<img width="989" alt="Screen Shot 2019-10-30 at 6 27 12 PM" src="https://user-images.githubusercontent.com/24424825/67986110-eb99ee00-fbef-11e9-8aff-312479473a24.png">
+<img width="989" alt="Tomato Time Project" src="https://user-images.githubusercontent.com/24424825/67992207-71726500-fc01-11e9-8eea-285f03f88de6.png">
 
 # About
 
