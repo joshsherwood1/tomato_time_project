@@ -28,7 +28,7 @@ To consume an external trivia API we used services in a Sinatra application. The
         gem 'faraday'
         gem 'sidekiq'
         gem 'sinatra'
- # Clone
+ # Clone Me
     '''
     $ git clone https://github.com/joshsherwood1/tomato_time_project.git
     $ cd tomato_time_project
