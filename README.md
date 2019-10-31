@@ -17,4 +17,24 @@ To consume an external trivia API we used services in a Sinatra application. The
 
 <img width="801" alt="Screen Shot 2019-10-23 at 2 49 52 PM" src="https://user-images.githubusercontent.com/33855435/67909323-6c031500-fb44-11e9-85ef-8b989a26e8ef.png">
 
+# Local Installation
 
+  ## Requirements 
+      - Ruby 2.4.1
+      Required Gems:
+        gem 'bootsnap', '>= 1.1.0', require: false
+        gem 'omniauth-google-oauth2'
+        gem 'figaro'
+        gem 'faraday'
+        gem 'sidekiq'
+        gem 'sinatra'
+ # Clone
+    '''
+    $ git clone https://github.com/joshsherwood1/tomato_time_project.git
+    $ cd tomato_time_project
+    $ bundle
+    '''
+# Setup Database 
+    '''
+    $ rails db:{drop,create,migrate,seed}
+    '''
