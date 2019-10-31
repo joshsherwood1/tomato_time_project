@@ -33,6 +33,8 @@ describe "invite friend" do
 
     fill_in "Email", with: "mackhalliday"
 
+    click_on "Send Invite"
+
     expect(page).to have_content("Please enter a valid email address")
   end
 
@@ -48,6 +50,8 @@ describe "invite friend" do
     click_link "Invite a Friend"
 
     fill_in "Email", with: "mackenzie.halliday@gmail.com"
+
+    click_on "Send Invite"
 
     expect(page).to have_content("This user is already registered on our site.")
   end
