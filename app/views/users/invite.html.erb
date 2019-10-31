@@ -2,6 +2,7 @@
   <h4> Invite a Friend!</h4>
   <br>
   <section class='invite-friend'>
+    <p> Add your friend's email address below </p>
     <%= form_tag "/send_invite", method: :get do %>
       <%= text_field_tag :email, nil, placeholder: "Email" %>
       <%= submit_tag "Send Invite" %>
