@@ -38,3 +38,13 @@ To consume an external trivia API we used services in a Sinatra application. The
     '''
     $ rails db:{drop,create,migrate,seed}
     '''
+    
+# Testing
+    Integration testing and Unit testing is implemented with RSpec and can be run with $ bundle exec rspec
+    
+# Performance
+    We are using Skylight to track app performance, use the buttons below to checkout our stats on Skylight.io
+    [![View performance data on Skylight](https://badges.skylight.io/problem/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
+    [![View performance data on Skylight](https://badges.skylight.io/typical/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
+    [![View performance data on Skylight](https://badges.skylight.io/rpm/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
+    [![View performance data on Skylight](https://badges.skylight.io/status/q5G0EIYttyKf.svg?token=WqHiMzJUAr5sxcZd2A9NgUW7ufBbQFHTTFzaF-FWkB8)](https://www.skylight.io/app/applications/q5G0EIYttyKf)
