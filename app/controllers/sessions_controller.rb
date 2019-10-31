@@ -1,8 +1,4 @@
 class SessionsController < ApplicationController
-  # def new
-  #   @new ||= User.new
-  # end
-
   def log_in(user)
    session[:user_id] = user.id
   end
