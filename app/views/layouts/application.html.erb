@@ -29,15 +29,15 @@
          <% if current_user.nil? %>
             <a class="navbar-brand" href="/auth/google_oauth2"><span class="fas fa-play"></span><span class="link">Login/Register with Google</span></a>
           <% else %>
-            <a class="nav-item nav-link active" style="text-align: right" href="/games">My Games</a>
-            <a class="nav-item nav-link active" style="text-align: right" href="/profile">Profile</a>
-            <a class="nav-item nav-link active" style="text-align: right" href="/invite">Invite a Friend</a>
-            <a class="nav-item nav-link active" style="text-align: right" href="/logout">Logout</a>
+            <a class="navbar-brand" href="/games"><span class="fas fa-gamepad"></span><span class="link">My Games</span></a>
+            <a class="navbar-brand" href="/profile"><span class="fas fa-user"></span><span class="link">Profile</span></a>
+            <a class="navbar-brand" href="/invite"><span class="fas fa-envelope-square"></span><span class="link">Invite a Friend</span></a>
+            <a class="navbar-brand" href="/logout"><span class="fas fa-door-open"></span><span class="link">Logout</span></a>
          <% end %>
        </ul>
      </div>
      <div class = "center" style="text-align: right">
-       <img src="https://thumbs.gfycat.com/BriskLankyCopperhead-size_restricted.gif" alt="Tomato" height="80" width="105">
+       <img style="border-radius: 100%;" src="https://thumbs.gfycat.com/BriskLankyCopperhead-size_restricted.gif" alt="Tomato" height="90" width="105">
      </div>
 
    </nav>
