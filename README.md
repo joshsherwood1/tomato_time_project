@@ -10,3 +10,11 @@ You have stumbled upon our Triva Game called 'Tomato Time'. This is a Turing Sch
 
 Try our App!
 https://peaceful-chamber-62417.herokuapp.com/
+
+# How it works
+
+To consume an external trivia API we used services in a Sinatra application. The data consumed from this API is converted into stored question objects. We built a Rails app that consumes an internal API of the Sinatra app, which accesses these stored question objects via spefic endpoints. The Rails appilcation then uses its own services to render a game in the browser, styled with bootstrap. 
+
+<img width="801" alt="Screen Shot 2019-10-23 at 2 49 52 PM" src="https://user-images.githubusercontent.com/33855435/67909323-6c031500-fb44-11e9-85ef-8b989a26e8ef.png">
+
+
