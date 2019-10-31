@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: tomato_time_2_production
-  username: tomato_time_2
-  password: <%= ENV['TOMATO_TIME_2_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: tomato_time_2_production
+  # username: tomato_time_2
+  # password: <%= ENV['TOMATO_TIME_2_DATABASE_PASSWORD'] %>

@@ -12,6 +12,7 @@ cache: bundler
 
 script:
   - bundle exec rake
+  - bundle exec rake send_digest
 
 services:
   - redis-server
