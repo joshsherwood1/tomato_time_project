@@ -1,9 +1,9 @@
 <div class="container" id="stats-table">
-  <h4><%= @user.username %>'s Game Stats</h4>
+  <h2><%= @user.username %>'s Game Stats</h2>
   <br>
   <section class='game-stats'>
 
-    <p class='total-games-played'><strong>Total Games Played: <%= @user.total_games_played %></strong></p>
+    <h5 class='total-games-played'><strong>Total Games Played: <%= @user.total_games_played %></strong></h5>
     <section class='clear-stats'>
       <% unless @user.game_score.empty? %>
         <%= link_to "Delete all", "/profile", confirm: 'Are you sure?', method: :delete, class: 'btn btn-primary' %>
