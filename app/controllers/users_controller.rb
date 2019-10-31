@@ -20,8 +20,8 @@ class UsersController < ApplicationController
       redirect_to invite_path
     else
       InviteFriendMailer.invite_friend(current_user, friend_email, server_origin).deliver_now
-      redirect_to invite_path
       flash[:success] = 'Successfully sent invite!'
+      redirect_to invite_path
     end
   end
 
