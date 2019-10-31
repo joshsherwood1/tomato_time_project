@@ -1,7 +1,7 @@
 <div class="container">
   <center><h2><%= @user.username %>'s Games</h2></center>
   <br>
-  <center><h5><%= button_to "Create New Game", {class: 'btn btn-light'} %></h5></center>
+  <center><%= link_to "Create New Game", "/games/new", class: 'new-game-btn zoom btn btn-light' %></center>
   <br>
   <br>
   <% unless @games.empty? %>

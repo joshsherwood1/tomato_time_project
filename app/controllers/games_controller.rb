@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :require_user
   def new
   end
 
@@ -34,10 +35,22 @@ class GamesController < ApplicationController
   end
 
   def calculate_score
+    if params["question"].nil?
+      flash[:error] = "Please answer all questions"
+      redirect_to "/games/#{params["game_id"].to_i}" and return
+    end
+
     number_correct = params["question"].values.count {|value| value == "true"}
     game_score = GameScore.create(user_id: current_user.id, game_id: params["game_id"].to_i, score: number_correct)
     total_questions = game_score.game.number_of_questions
-    flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! Good job!"
+
+    if game_score.game_percent_score == 0
+      flash[:error] = "You got #{number_correct} correct answers! Please try again."
+    elsif game_score.game_percent_score < 50.0
+      flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}! Good try. Just remember, the more you know the more you grow!"
+    else
+      flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! You're ripe with Knowledge!"
+    end
     redirect_to "/games/#{params["game_id"].to_i}/end"
   end
 
