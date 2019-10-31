@@ -6,6 +6,8 @@ RSpec.describe "As a visitor" do
       visit "/"
       expect(page).to have_content("Welcome!")
       expect(page).to have_content("About Tomato Time:")
-      expect(page).to have_content("You can play all sorts of trivia games with your friends!")
+      expect(page).to have_content("Play the trivia game of your choice!")
+      expect(page).to have_content("Choose your trivia category, difficulty, and number of questions that you would like to answer.")
+      expect(page).to have_content("Time to get tomato-red saucy!")
     end
   end
