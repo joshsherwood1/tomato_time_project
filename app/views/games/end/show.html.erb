@@ -1,12 +1,16 @@
 <div class="games_info">
 
-  <h4>Game Stats for <%= @game.custom_name %></h4>
+  <center>
 
+  <h3>Game Stats for <%= @game.custom_name %></h3>
+  <br>
   <h4>Difficulty: <%= @game.difficulty %></h4>
-
+  <br>
   <h4>Category: <%= @game.category %></h4>
+  <br>
+  <p><%= button_to "Restart Game", "/games/#{@game.id}", { method: :get, class: 'btn btn-primary'} %></p>
+  <p><%= button_to "Go Back to My Games", "/games", { method: :get, class: 'btn btn-primary'} %></p>
 
-  <p><%= button_to "Restart Game", "/games/#{@game.id}", method: :get %></p>
-  <p><%= button_to "Go Back to My Games", "/games", method: :get%></p>
+  </center>
 
 </div>
