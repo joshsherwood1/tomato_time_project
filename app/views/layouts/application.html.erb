@@ -29,10 +29,10 @@
          <% if current_user.nil? %>
             <a class="navbar-brand" href="/auth/google_oauth2"><span class="fas fa-play"></span><span class="link">Login/Register with Google</span></a>
           <% else %>
-            <a class="nav-item nav-link active" style="text-align: right" href="/games">My Games</a>
-            <a class="nav-item nav-link active" style="text-align: right" href="/profile">Profile</a>
-            <a class="nav-item nav-link active" style="text-align: right" href="/invite">Invite a Friend</a>
-            <a class="nav-item nav-link active" style="text-align: right" href="/logout">Logout</a>
+            <a class="nav-item nav-link active" href="/games">My Games</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="nav-item nav-link active" href="/profile">Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="nav-item nav-link active" href="/invite">Invite a Friend</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="nav-item nav-link active" href="/logout">Logout</a>
          <% end %>
        </ul>
      </div>
