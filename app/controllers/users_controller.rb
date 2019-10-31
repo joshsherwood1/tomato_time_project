@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def send_invite
     friend_email = params[:email]
 
-    if already_user?(friend_email)
+    if User.already_user?(friend_email)
       redirect_to invite_path
       flash[:error] = 'This user is already registered on our site.'
     elsif not_valid_email?(friend_email)
@@ -28,9 +28,5 @@ class UsersController < ApplicationController
   private
   def server_origin
     request.env['HTTP_HOST']
-  end
-
-  def already_user?(friend_email)
-      User.exists?(email: friend_email)
   end
 end
