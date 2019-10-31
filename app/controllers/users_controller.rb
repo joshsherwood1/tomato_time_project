@@ -33,10 +33,4 @@ class UsersController < ApplicationController
   def already_user?(friend_email)
       User.exists?(email: friend_email)
   end
-
-  def not_valid_email?(friend_email)
-    if (friend_email =~ URI::MailTo::EMAIL_REGEXP) == nil
-      return true
-    end
-  end
 end
