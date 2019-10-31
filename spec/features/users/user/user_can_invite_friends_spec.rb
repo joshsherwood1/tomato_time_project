@@ -8,7 +8,7 @@ describe "invite friend" do
 
     visit "/games"
 
-    click_link "Invite a Friend!"
+    click_link "Invite a Friend"
 
     expect(current_path).to eq(invite_path)
 
@@ -29,7 +29,7 @@ describe "invite friend" do
 
     visit "/games"
 
-    click_link "Invite a Friend!"
+    click_link "Invite a Friend"
 
     fill_in "Email", with: "mackhalliday"
 
@@ -43,9 +43,9 @@ describe "invite friend" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    vvisit "/games"
+    visit "/games"
 
-    click_link "Invite a Friend!"
+    click_link "Invite a Friend"
 
     fill_in "Email", with: "mackenzie.halliday@gmail.com"
 
