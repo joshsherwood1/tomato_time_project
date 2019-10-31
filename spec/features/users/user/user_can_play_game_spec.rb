@@ -14,40 +14,27 @@ describe 'A registered user' do
 
     click_button('Play Game')
 
-
     within '#myModal-0' do
-      choose('question_424_true')
       click_button('Next')
     end
 
     within '#myModal-1' do
-      choose('question_429_true')
       click_button('Next')
     end
 
     within '#myModal-2' do
-      choose('question_430_true')
       click_button('Next')
     end
 
     within '#myModal-3' do
-      choose('question_435_true')
       click_button('Next')
     end
 
     within '#myModal-4' do
-      choose('question_436_true')
       click_button('Submit')
     end
 
-    expect(current_path).to eq("/games/#{game_1.id}/end")
-    expect(page).to have_content("You got 5 correct answers out of 5!!! Good job!")
-    within ".games_info" do
-      expect(page).to have_content(game_1.custom_name)
-      expect(page).to have_content(game_1.category)
-      expect(page).to have_content(game_1.difficulty)
-      expect(page).to have_button("Restart Game")
-      expect(page).to have_button("Go Back to My Games")
-    end
+    expect(current_path).to eq("/games/#{game_1.id}")
+    expect(page).to have_content("Please answer all questions")
   end
 end
