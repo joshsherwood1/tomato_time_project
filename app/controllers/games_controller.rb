@@ -49,7 +49,7 @@ class GamesController < ApplicationController
     elsif game_score.game_percent_score < 50.0
       flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}! Good try. Just remember, the more you know the more you grow!"
     else
-      flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! You're ripe with Knowledge!"
+      flash[:success] = "You got #{number_correct} correct answers out of #{total_questions}!!! You're ripe with knowledge!"
     end
     redirect_to "/games/#{params["game_id"].to_i}/end"
   end
